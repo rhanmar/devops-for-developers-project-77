@@ -1,0 +1,12 @@
+vault_redmine_db_host: ${db_host}
+vault_redmine_db_name: ${db_name}
+vault_redmine_db_username: ${db_username}
+vault_redmine_db_password: ${db_password}
+vault_redmine_db_port: ${db_port}
+
+vault_datadog_api_key: ${datadog_api_key}
+vault_datadog_site: ${datadog_site}
+
+vault_redmine_port: ${app_port}
+
+ansible_user: ${ssh_login}

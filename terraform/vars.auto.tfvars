@@ -4,3 +4,4 @@ app_port = 8082
 db_user = "db-user-1"
 db_name = "db-1"
 platform_id = "standard-v3"
+datadog_site = "us5.datadoghq.com"

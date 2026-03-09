@@ -1,2 +1,4 @@
 group_vars/.vault-pass
 .env
+inventory.ini
+group_vars/webservers/vault.yml

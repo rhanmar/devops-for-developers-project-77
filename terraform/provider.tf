@@ -6,6 +6,10 @@ terraform {
     datadog = {
       source = "DataDog/datadog"
     }
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.4.0"
+    }
   }
   required_version = ">= 0.13"
 }

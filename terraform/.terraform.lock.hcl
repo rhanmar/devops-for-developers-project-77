@@ -8,6 +8,14 @@ provider "registry.terraform.io/datadog/datadog" {
   ]
 }
 
+provider "registry.terraform.io/hashicorp/local" {
+  version     = "2.4.1"
+  constraints = "~> 2.4.0"
+  hashes = [
+    "h1:gpp25uNkYJYzJVnkyRr7RIBVfwLs9GSq2HNnFpTRBg0=",
+  ]
+}
+
 provider "registry.terraform.io/yandex-cloud/yandex" {
   version = "0.191.0"
   hashes = [
