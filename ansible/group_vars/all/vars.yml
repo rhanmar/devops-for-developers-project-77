@@ -1,0 +1,8 @@
+redmine_port: 8082
+ansible_user: "dmitriy"
+
+db_postgres: rc1a-gjofbrb4sql33ru9.mdb.yandexcloud.net
+db_database: db-1
+db_username: db-user-1
+db_password: "{{ vault_redmine_db_password }}"
+db_port: 6432

@@ -1,0 +1,59 @@
+- name: App deploy
+  hosts: all
+
+  pre_tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+      become: true
+
+    - name: Install python deps
+      ansible.builtin.pip:
+        name:
+          - requests
+
+  tasks:
+    - name: Ping yc
+      ansible.builtin.ping:
+      tags: check
+
+    - name: Install pip
+      ansible.builtin.import_role:
+        name: geerlingguy.pip
+      become: true
+      tags: setup
+
+    - name: Install docker
+      ansible.builtin.import_role:
+        name: geerlingguy.docker
+      become: true
+      tags: setup
+
+    - name: Create env file from template
+      ansible.builtin.template:
+        src: env.j2
+        dest: .env
+        mode: "0644"
+      tags: [deploy, setup]
+
+    - name: Run redmine
+      community.docker.docker_container:
+        name: redmine-app
+        image: redmine:latest
+        state: started
+        ports: "{{ redmine_port }}:3000"
+        env_file: .env
+        restart_policy: always
+      become: true
+      tags: deploy
+
+#####
+
+- name: Datadog deploy
+  hosts: webservers
+  tasks:
+    - name: Install Datadog Agent
+      ansible.builtin.import_role:
+        name: datadog.dd.agent
+      become: true
+      tags: datadog
