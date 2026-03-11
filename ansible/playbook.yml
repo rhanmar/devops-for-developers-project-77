@@ -2,11 +2,6 @@
   hosts: all
 
   pre_tasks:
-    - name: Update apt cache
-      ansible.builtin.apt:
-        update_cache: true
-      become: true
-
     - name: Install python deps
       ansible.builtin.pip:
         name:
@@ -16,6 +11,13 @@
     - name: Ping yc
       ansible.builtin.ping:
       tags: check
+
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: yes
+        force_apt_get: yes
+      become: true
+      tags: setup
 
     - name: Install pip
       ansible.builtin.import_role:

@@ -16,7 +16,7 @@ vault-encrypt:
 vault-decrypt:
 	ansible-vault decrypt group_vars/all/vault.yml --vault-pass-file ./group_vars/.vault-pass
 
-deploy: install-deps
+deploy: setup
 	ansible-playbook playbook.yml -i inventory.ini -t deploy --vault-password-file ./group_vars/.vault-pass
 
 datadog: install-deps
