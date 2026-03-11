@@ -1,6 +1,9 @@
 TERRAFORM_DIR := terraform
 ANSIBLE_DIR := ansible
 
+tf-generate-config:
+	make -C $(ANSIBLE_DIR) terraform-generate-config
+
 tf-init:
 	terraform -chdir=$(TERRAFORM_DIR) init
 

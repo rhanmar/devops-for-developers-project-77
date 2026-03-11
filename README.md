@@ -4,6 +4,7 @@
 [Ссылка на приложение](http://84.252.133.32:8082/)
 
 # Команды
+* `make tf-generate-config` - генерация конфига для Terraform
 * `make tf-init` - инициализация зависимостей Terraform
 * `make tf-apply` - создание инфраструктуры
 * `make tf-validate` - валидация скриптов

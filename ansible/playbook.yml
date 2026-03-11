@@ -69,8 +69,10 @@
       ansible.builtin.template:
         src: templates/terraform/secrets.auto.tfvars.j2
         dest: ../terraform/secrets.auto.tfvars
+        mode: "0644"
 
     - name: Create file with vars
       ansible.builtin.template:
         src: templates/terraform/vars.auto.tfvars.j2
         dest: ../terraform/vars.auto.tfvars
+        mode: "0644"

@@ -27,5 +27,3 @@ run-local:
 
 terraform-generate-config:
 	ansible-playbook playbook.yml -t tf --vault-password-file ./group_vars/.vault-pass
-# 	ansible-playbook playbook.yml -t tf
-# 	ansible-playbook playbook.yml -t tf --ask-vault-pass
