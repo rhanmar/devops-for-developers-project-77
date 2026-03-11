@@ -14,8 +14,7 @@
 
     - name: Update apt cache
       ansible.builtin.apt:
-        update_cache: yes
-        force_apt_get: yes
+        update_cache: true
       become: true
       tags: setup
 
