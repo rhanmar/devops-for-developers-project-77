@@ -1,5 +1,5 @@
 redmine_port: "{{ vault_redmine_port }}"
-ansible_user: "{{ ssh_login }}"
+ansible_user: "{{ vault_ssh_login }}"
 
 db_postgres: "{{ vault_redmine_db_host }}"
 db_database: "{{ vault_redmine_db_name }}"

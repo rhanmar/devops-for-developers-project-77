@@ -1,3 +1,0 @@
-[webservers]
-yc_1 ansible_host=${app_server_1_ip}
-yc_2 ansible_host=${app_server_2_ip}

@@ -57,3 +57,20 @@
         name: datadog.dd.agent
       become: true
       tags: datadog
+
+#####
+
+- name: Generate Terraform secrets
+  hosts: localhost
+  tags: tf
+
+  tasks:
+    - name: Create file with secrets
+      ansible.builtin.template:
+        src: templates/terraform/secrets.auto.tfvars.j2
+        dest: ../terraform/secrets.auto.tfvars
+
+    - name: Create file with vars
+      ansible.builtin.template:
+        src: templates/terraform/vars.auto.tfvars.j2
+        dest: ../terraform/vars.auto.tfvars
